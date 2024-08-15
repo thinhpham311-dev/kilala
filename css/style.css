@@ -1,0 +1,90 @@
+/* Variable */
+@import url('./variables/index.css');
+
+/* Components Static */
+@import url('./statics/index.css');
+
+/* Components Actions */
+@import url('./actions/index.css');
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    ;
+}
+
+body {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+}
+
+
+/* Header */
+header .nav-wrapper .nav-item {
+    border-style: solid;
+    border-color: var(--kll-light);
+    border-right: 3px
+}
+
+/* About us */
+
+.about-inner--content,
+.references-inner {
+    text-align: center;
+    margin: 50px 0;
+    padding-left: calc(50% - 522px);
+    padding-right: calc(50% - 522px);
+}
+
+.about-inner--content .card .card-body {
+    padding: 0;
+}
+
+
+.about-inner {
+    padding-left: calc(50% - 500px);
+    padding-right: calc(50% - 500px);
+}
+
+.about-inner .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+
+/* Màn hình lớn hơn 600px: 2 cột */
+@media (min-width: 600px) {
+    .about-inner .grid-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Màn hình lớn hơn 768px: 3 cột */
+@media (min-width: 768px) {
+    .about-inner .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Màn hình lớn hơn 1024px: 4 cột */
+@media (min-width: 1024px) {
+    .about-inner .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .references-inner .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

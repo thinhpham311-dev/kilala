@@ -1,0 +1,34 @@
+.btn {
+    position: relative;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:hover {
+    opacity: 0.5;
+}
+
+.btn-transparent {
+    color: var(--kll-white);
+    border: 2px solid var(--kll-white);
+    background: none;
+}
+
+.btn-light {
+    color: var(--kll-black);
+    background-color: var(--kll-white);
+}
+
+.btn-dark {
+    color: var(--kll-white);
+    background-color: var(--kll-black);
+}
