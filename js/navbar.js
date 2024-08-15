@@ -1,3 +1,13 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const toggler = document.querySelector('.navbar-toggler');
+    const navCollapse = document.querySelector('.navbar-collapse');
+
+    toggler.addEventListener('click', function () {
+        navCollapse.classList.toggle('show');
+    });
+});
+
+
 
 // Active Menu Navbar
 document.addEventListener('DOMContentLoaded', function () {
@@ -15,12 +25,4 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Toggle Menu Button On Mobile Devices
-document.addEventListener("DOMContentLoaded", function () {
-    const toggler = document.querySelector('.navbar-toggler');
-    const navCollapse = document.querySelector('.navbar-collapse');
-
-    toggler.addEventListener('click', function () {
-        navCollapse.classList.toggle('show');
-    });
-});
 

@@ -13,6 +13,7 @@
     ;
 }
 
+
 body {
     position: relative;
     padding: 0;
@@ -36,20 +37,24 @@ a {
 header .nav-wrapper .nav-item {
     border-style: solid;
     border-color: var(--kll-light);
-    border-right: 3px
+    border-right: 3px;
+    border-top: 0;
+    border-bottom: 0;
 }
 
 /* About us */
 
 .about-inner--content,
-.references-inner {
+.references-inner--content,
+.references-inner--brands {
     text-align: center;
     margin: 50px 0;
     padding-left: calc(50% - 522px);
     padding-right: calc(50% - 522px);
 }
 
-.about-inner--content .card .card-body {
+.about-inner--content .card .card-body,
+.references-inner--brands .card .card-body {
     padding: 0;
 }
 
@@ -59,32 +64,150 @@ header .nav-wrapper .nav-item {
     padding-right: calc(50% - 500px);
 }
 
-.about-inner .grid-container {
+/* about us tabs */
+
+
+.about-inner .about-inner--tabs .nav-link {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.about-inner .about-inner--tabs .grid-container {
     grid-template-columns: repeat(1, 1fr);
 }
 
 
+.about-inner .about-inner--tabs .card-inline {
+    gap: 20px;
+}
+
+.about-inner .about-inner--tabs .card:hover .card-title {
+    color: var(--kll-red);
+    transition: color 0.3s;
+}
+
+.about-inner .about-inner--tabs .card .card-title {
+    transition: color 0.3s;
+}
+
+.about-inner .about-inner--tabs .card:hover .card-img {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+
+.about-inner .about-inner--tabs .card .card-img {
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--kll-light);
+    border-radius: 100%;
+    aspect-ratio: 1 / 1;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    transition: transform 0.3s;
+}
+
+.about-inner .about-inner--tabs .card .card-body {
+    padding: 0;
+}
+
+.about-inner--content .card-content {
+    color: var(--kll-black);
+}
+
+/* Feature Work */
+.feature-inner {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.feature-inner::after {
+    content: "";
+    background-image: url('../img/captures/image.png');
+    background-size: 100%;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.feature-inner .card {
+    background: none;
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
+}
+
+.feature-inner .card>* {
+    flex: 1;
+}
+
+
+
+.feature-inner .card-inline {
+    align-items: center;
+}
+
+
+.feature-inner .card-title {
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.feature-inner .card-content,
+.feature-inner .card-title,
+.feature-inner .card-small-title {
+    color: var(--kll-white);
+}
+
+
+
+/* references */
+
+.references-inner .references-inner--brands .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+
+
 /* Màn hình lớn hơn 600px: 2 cột */
 @media (min-width: 600px) {
-    .about-inner .grid-container {
+    .about-inner .about-inner--tabs .grid-container {
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .references-inner .references-inner--brands .grid-container {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 /* Màn hình lớn hơn 768px: 3 cột */
 @media (min-width: 768px) {
-    .about-inner .grid-container {
+    .about-inner .about-inner--tabs .grid-container {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .references-inner .references-inner--brands .grid-container {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
 /* Màn hình lớn hơn 1024px: 4 cột */
 @media (min-width: 1024px) {
-    .about-inner .grid-container {
+    .about-inner .about-inner--tabs .grid-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .references-inner .grid-container {
-        grid-template-columns: repeat(2, 1fr);
+    .references-inner .references-inner--brands .grid-container {
+        grid-template-columns: repeat(5, 1fr);
     }
 }
